@@ -1,0 +1,17 @@
+Algorithm CanTravelWithR
+Input: R (the request accepted by the driver), L (the list of client requests)
+Output: RESULT (the list of client requests with which the driver can travel)
+
+Ensure: R != null, L != null
+
+Begin
+  Initialize an empty list RESULT
+
+  For each clientRequest in L do 
+    If TravelCompare(R, clientRequest) then
+      Add clientRequest to RESULT
+    End If
+  End For
+
+  Return RESULT
+End

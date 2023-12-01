@@ -1,0 +1,66 @@
+// paramètres :
+R; // la requête acceptée par le chauffeur
+L; // La liste des requête clients
+// description : chaque requête a un type(course,dépot,ramassage), une position de départ et d'arrivée, une heure de départ
+
+// retourne 
+RESULT; //la liste des requêtes clients avec lesquelles le chauffeur peut voyager
+
+// description : retourne la liste des requêtes clients avec lesquelles le chauffeur peut voyager
+
+// préconditions :
+// R != null
+// L != null
+
+// postconditions :
+// RESULT != null
+// RESULT.size() >= 0
+// RESULT.size() <= L.size()
+
+// début 
+// on initialise RESULT à la liste vide
+  RESULT=[];
+// pour chaque requête client dans L
+// si le chauffeur peut voyager avec la requête client
+// on ajoute la requête client à RESULT
+// fin pour
+for (Request request : L) {
+    if (TravelCompare(R, request)) {
+        RESULT.add(request);
+    }
+}
+// on retourne RESULT
+return RESULT;
+// fin
+
+
+// Fonction : TravelCompare (R, C) qui prend en paramètre une requête client et une requête acceptée par le chauffeur et retourne un booléen
+// Description : Le chauffeur peut voyager avec la requête client si : la requête client est un ramassage et la requête acceptée par le chauffeur est un ramassage et les deux requêtes ont la même heure de départ,les deux ont le lieu de départ et d'arrivée identique
+// Description : Le chauffeur peut voyager avec la requête client si : la requête client est un ramassage et la requête acceptée par le chauffeur est un ramassage,les deux ont le lieu de départ et d'arrivée identique et que le chauffeur peut arriver à temps pour le ramassage
+
+Function TravelCompare (R, C) {
+    // si la requête client est un ramassage et la requête acceptée par le chauffeur est un ramassage et les deux requêtes ont la même heure de départ,les deux ont le lieu de départ et d'arrivée identique
+    if (C.type == "ramassage" && R.type == "ramassage" && C.departureTime == R.departureTime && C.departure == R.departure && C.arrival == R.arrival) {
+        return true;
+    }
+    // si la requête client est un ramassage et la requête acceptée par le chauffeur est un ramassage,les deux ont le lieu de départ et d'arrivée identique et que le chauffeur peut arriver à temps pour le ramassage
+    if (C.type == "ramassage" && R.type == "ramassage" && C.departure == R.departure && C.arrival == R.arrival && C.departureTime - R.departureTime <= 30) {
+        return true;
+    }
+    // si la requête client est un ramassage et la requête acceptée par le chauffeur est un ramassage,les deux ont le lieu de départ et d'arrivée identique et que le chauffeur peut arriver à temps pour le ramassage
+    if (C.type == "ramassage" && R.type == "ramassage" && C.departure == R.departure && C.arrival == R.arrival && C.departureTime - R.departureTime <= 30) {
+        return true;
+    }
+    // si la requête client est un ramassage et la requête acceptée par le chauffeur est un ramassage,les deux ont le lieu de départ et d'arrivée identique et que le chauffeur peut arriver à temps pour le ramassage
+    if (C.type == "ramassage" && R.type == "ramassage" && C.departure == R.departure && C.arrival == R.arrival && C.departureTime - R.departureTime <= 30) {
+        return true;
+    }
+    // si la requête client est un ramassage et la requête acceptée par le chauffeur est un ramassage,les deux ont le lieu de départ et d'arrivée identique et que le chauffeur peut arriver à temps pour le ramassage
+    if (C.type
+
+}
+
+
+
+
+
